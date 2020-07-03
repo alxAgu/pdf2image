@@ -1,23 +1,22 @@
-import "gm-base64"
-import gm from "gm"
-import path from "path"
-import fs from "fs-extra"
+// import "gm-base64"
+const gm = require("gm").subClass({ imageMagick: true });
+const path = require("path");
+const fs = require("fs-extra");
 
-gm = gm.subClass({ imageMagick: true });
 
-export default class PDF2Pic {
-  static defaultOptions = {
-    quality: 0,
-    format: "png",
-    size: "768x512",
-    density: 72,
-    savedir: "./",
-    savename: "untitled",
-    compression: "jpeg"
-  }
-
+class PDF2Pic {
   constructor(options = {}) {
-    this.options = { ...PDF2Pic.defaultOptions, ...options }
+    const defaultOptions = {
+      quality: 0,
+      format: "png",
+      size: "768x512",
+      density: 72,
+      savedir: "./",
+      savename: "untitled",
+      compression: "jpeg",
+    };
+
+    this.options = { ...defaultOptions, ...options }
   }
 
   /**
@@ -353,3 +352,5 @@ export default class PDF2Pic {
     return this
   }
 }
+
+module.exports = PDF2Pic;
