@@ -1,5 +1,5 @@
 {
-  "name": "pdf2pic",
+  "name": "@vergetech/pdf2pic",
   "version": "1.4.0",
   "types": "index.d.ts",
   "description": "A utility for converting pdf to image and base64 format.",
