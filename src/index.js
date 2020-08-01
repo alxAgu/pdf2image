@@ -1,5 +1,5 @@
-// import "gm-base64"
 let gm = require("gm");
+require("gm-base64");
 const path = require("path");
 const fs = require("fs-extra");
 
