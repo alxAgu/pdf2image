@@ -1,8 +1,11 @@
 // import "gm-base64"
-const gm = require("gm").subClass({ imageMagick: true });
+let gm = require("gm");
 const path = require("path");
 const fs = require("fs-extra");
 
+const setGm = customGm =>{
+  gm = customGm
+}
 
 class PDF2Pic {
   constructor(options = {}) {
@@ -354,4 +357,4 @@ class PDF2Pic {
   }
 }
 
-module.exports = PDF2Pic;
+module.exports = { PDF2Pic, setGm }
